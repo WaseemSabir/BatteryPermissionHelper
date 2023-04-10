@@ -12,7 +12,7 @@ import com.waseemsabir.betterypermissionhelper.utils.applicationName
 import com.waseemsabir.betterypermissionhelper.utils.getIntentActivities
 import java.util.Locale
 
-class BatteryPermissionHelper {
+class BatteryPermissionHelper private constructor() {
 
   /* HTC */
   private val BRAND_HTC = "htc"
@@ -419,5 +419,14 @@ class BatteryPermissionHelper {
   ): Boolean {
     return if (open) startScreen(context, intentActions)
     else areActivitiesFound(context, intentActions)
+  }
+
+  companion object {
+    @Volatile private var instance: BatteryPermissionHelper? = null
+
+    fun getInstance(): BatteryPermissionHelper {
+      return instance
+          ?: synchronized(this) { instance ?: BatteryPermissionHelper().also { instance = it } }
+    }
   }
 }
