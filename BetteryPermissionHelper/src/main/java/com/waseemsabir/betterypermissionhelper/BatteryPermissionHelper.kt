@@ -87,18 +87,22 @@ class BatteryPermissionHelper {
    *   false otherwise
    */
   fun getPermission(context: Context, open: Boolean = true, newTask: Boolean = false): Boolean {
-    when (Build.BRAND.lowercase(Locale.ROOT)) {
-      BRAND_HTC -> return startForHtc(context, open, newTask)
-      BRAND_HUAWEI -> return startForHuawei(context, open, newTask)
-      BRAND_MEIZU -> return startForMeizu(context, open, newTask)
-      BRAND_OPPO -> return startForOppo(context, open, newTask)
-      BRAND_SAMSUNG -> return startForSamsung(context, open, newTask)
-      BRAND_XIAOMI,
-      BRAND_XIAOMI_POCO,
-      BRAND_XIAOMI_REDMI -> return startForXiaomi(context, open, newTask)
-      BRAND_ZTE -> return startForZte(context, open, newTask)
-      BRAND_LETV -> return startForLetv(context, open, newTask)
-      else -> return startDefault(context, open, newTask)
+    try {
+      return when (Build.BRAND.lowercase(Locale.ROOT)) {
+        BRAND_HTC -> startForHtc(context, open, newTask)
+        BRAND_HUAWEI -> startForHuawei(context, open, newTask)
+        BRAND_MEIZU -> startForMeizu(context, open, newTask)
+        BRAND_OPPO -> startForOppo(context, open, newTask)
+        BRAND_SAMSUNG -> startForSamsung(context, open, newTask)
+        BRAND_XIAOMI,
+        BRAND_XIAOMI_POCO,
+        BRAND_XIAOMI_REDMI -> startForXiaomi(context, open, newTask)
+        BRAND_ZTE -> startForZte(context, open, newTask)
+        BRAND_LETV -> startForLetv(context, open, newTask)
+        else -> startDefault(context, open, newTask)
+      }
+    } catch (_: Exception) {
+      return false
     }
   }
 

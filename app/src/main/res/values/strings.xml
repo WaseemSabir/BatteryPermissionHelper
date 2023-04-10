@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">BatteryPermissionExample</string>
+    <string name="is_permission_available">Is Permission Available?</string>
 </resources>
