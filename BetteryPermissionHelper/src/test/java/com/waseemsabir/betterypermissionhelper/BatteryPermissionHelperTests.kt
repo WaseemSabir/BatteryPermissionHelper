@@ -1,7 +1,10 @@
 package com.waseemsabir.betterypermissionhelper
 
-import org.junit.Assert.*
+import android.content.Context
+import android.content.pm.PackageManager
 import org.junit.Test
+import org.mockito.Mockito.mock
+import org.mockito.Mockito.`when`
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -10,7 +13,13 @@ import org.junit.Test
  */
 class BatteryPermissionHelperTests {
   @Test
-  fun addition_isCorrect() {
-    assertEquals(4, 2 + 2)
+  fun nonSupportedDevice() {
+    val batteryPermissionHelper = BatteryPermissionHelper.getInstance()
+    // Create a mock Context object
+    val context = mock(Context::class.java)
+    val packageManager = mock(PackageManager::class.java)
+    `when`(context.packageManager).thenReturn(packageManager)
+
+    assert(batteryPermissionHelper.isBatterySaverPermissionAvailable(context).not())
   }
 }
