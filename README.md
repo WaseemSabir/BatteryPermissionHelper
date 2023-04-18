@@ -4,7 +4,7 @@
 [![Unit Tests](https://github.com/WaseemSabir/BatteryPermissionHelper/actions/workflows/tests.yml/badge.svg)](https://github.com/WaseemSabir/BatteryPermissionHelper/actions/workflows/tests.yml)
 [![API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=16)
 
-An Android Library to help navigate the user to battery optimizations settings, so they can whitelist your app. This will prevent your app getting killed in background due to Battery Optimization Managers, build by different OEMs.
+An Android Library to detect battery optimizations settings and navigate the user to relevant, so they can whitelist your app. This will prevent your app getting killed in background due to Battery Optimization Managers. The library supports multiple OEMs.
 
 ## Usuage
 ```kotlin
