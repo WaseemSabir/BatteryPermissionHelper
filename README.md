@@ -6,6 +6,27 @@
 
 An Android Library to detect battery optimizations settings and navigate the user to the relevant screens so that they can whitelist the app. This will prevent the app from getting killed in the background due to Battery Optimization Managers. The library supports multiple OEMs.
 
+## Installation
+### Gradle
+Add this to your module's build.gradle file:
+```gradle
+dependencies {
+    // ... other dependencies
+    implementation 'com.waseemsabir:betterypermissionhelper:1.0.0'    
+}
+```
+
+### Maven
+```maven
+<dependency>
+    <groupId>com.waseemsabir</groupId>
+    <artifactId>betterypermissionhelper</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
+Other instructions for installation can be viewed [here](https://central.sonatype.com/artifact/com.waseemsabir/betterypermissionhelper/1.0.0).
+
 ## Usuage
 ```kotlin
 private val batteryPermissionHelper = BatteryPermissionHelper.getInstance()
