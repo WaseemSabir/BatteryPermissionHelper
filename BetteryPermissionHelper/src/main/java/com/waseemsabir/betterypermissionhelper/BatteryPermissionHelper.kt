@@ -55,7 +55,7 @@ class BatteryPermissionHelper private constructor() {
   private val BRAND_XIAOMI = "xiaomi"
   private val BRAND_XIAOMI_POCO = "poco"
   private val BRAND_XIAOMI_REDMI = "redmi"
-  private val PACKAGE_XIAOMI_MAIN = "com.com.miui.powerkeeper"
+  private val PACKAGE_XIAOMI_MAIN = "com.miui.powerkeeper"
   private val PACKAGE_XIAOMI_COMPONENT = "com.miui.powerkeeper.ui.HiddenAppsConfigActivity"
 
   /* ZTE */
