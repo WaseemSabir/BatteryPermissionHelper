@@ -12,7 +12,7 @@ Add this to your module's build.gradle file:
 ```gradle
 dependencies {
     // ... other dependencies
-    implementation 'com.waseemsabir:betterypermissionhelper:1.0.0'    
+    implementation 'com.waseemsabir:betterypermissionhelper:1.0.3'    
 }
 ```
 
@@ -21,7 +21,7 @@ dependencies {
 <dependency>
     <groupId>com.waseemsabir</groupId>
     <artifactId>betterypermissionhelper</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.3</version>
 </dependency>
 ```
 
