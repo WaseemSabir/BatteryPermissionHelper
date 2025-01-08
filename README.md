@@ -54,8 +54,7 @@ private final BatteryPermissionHelper batteryPermissionHelper = BatteryPermissio
 boolean isBatteryPermissionAvailable = batteryPermissionHelper.isBatterySaverPermissionAvailable(context, /* onlyIfSupported */ true);
 
 // Show a dialog based on availability (Implementation left to Dev) and OnClick open permission manager
-Button button = ...;
-button.setOnClickListener((view) -> {
+dialog.setOnClickListener((view) -> {
     batteryPermissionHelper.getPermission(context, /* open */ true, /* newTask */ true);
 });
 ```
