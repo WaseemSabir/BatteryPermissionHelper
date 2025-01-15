@@ -40,7 +40,7 @@ private val batteryPermissionHelper = BatteryPermissionHelper.getInstance()
 val isBatteryPermissionAvailable = batteryPermissionHelper.isBatterySaverPermissionAvailable(context = context, onlyIfSupported = true)
 
 // Show a dialog based on availability (Implementation left to Dev) and OnClick open permission manager
-dialog.setOnClickListener {
+buttonInDialog.setOnClickListener {
     batteryPermissionHelper.getPermission(this, open = true, newTask = true)
 }
 ```
@@ -54,7 +54,7 @@ private final BatteryPermissionHelper batteryPermissionHelper = BatteryPermissio
 boolean isBatteryPermissionAvailable = batteryPermissionHelper.isBatterySaverPermissionAvailable(context, /* onlyIfSupported */ true);
 
 // Show a dialog based on availability (Implementation left to Dev) and OnClick open permission manager
-dialog.setOnClickListener((view) -> {
+buttonInDialog.setOnClickListener((view) -> {
     batteryPermissionHelper.getPermission(context, /* open */ true, /* newTask */ true);
 });
 ```
