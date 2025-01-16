@@ -27,7 +27,12 @@ dependencies {
 
 Other instructions for installation can be viewed [here](https://central.sonatype.com/artifact/com.waseemsabir/betterypermissionhelper/1.0.0).
 
-## Usuage
+## Usage
+
+To keep the library small and extendable, UI elements (dialog/popups) implementation is left up to the library user. The library will not show any screens.
+
+### Kotlin
+
 ```kotlin
 private val batteryPermissionHelper = BatteryPermissionHelper.getInstance()
 
@@ -35,12 +40,26 @@ private val batteryPermissionHelper = BatteryPermissionHelper.getInstance()
 val isBatteryPermissionAvailable = batteryPermissionHelper.isBatterySaverPermissionAvailable(context = context, onlyIfSupported = true)
 
 // Show a dialog based on availability (Implementation left to Dev) and OnClick open permission manager
-dialog.setOnClickListener {
+buttonInDialog.setOnClickListener {
     batteryPermissionHelper.getPermission(this, open = true, newTask = true)
 }
 ```
 
-To keep the library small and extendable, UI elements (dialog/popups) implementation is left up to the library user. The library will not show any screens.
+### Java
+
+```java
+private final BatteryPermissionHelper batteryPermissionHelper = BatteryPermissionHelper.Companion.getInstance();
+
+// Check whether or not Battery Permission is Available for Device
+boolean isBatteryPermissionAvailable = batteryPermissionHelper.isBatterySaverPermissionAvailable(context, /* onlyIfSupported */ true);
+
+// Show a dialog based on availability (Implementation left to Dev) and OnClick open permission manager
+buttonInDialog.setOnClickListener((view) -> {
+    batteryPermissionHelper.getPermission(context, /* open */ true, /* newTask */ true);
+});
+```
+
+## Supported Devices
 
 Currently, the library supports following devices.
 
